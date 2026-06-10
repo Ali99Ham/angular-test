@@ -1,3 +1,81 @@
-<main>Hello World</main>
+<main class="min-h-screen max-w-347.75 mx-auto p-6">
+  <header class="flex items-center gap-2">
+    <h6 class="font-semibold text-black md:text-2xl">My Todo</h6>
+    <span class="text-red-600 font-semibold">**</span>
+  </header>
+
+  <section class="flex items-center gap-2 my-6">
+    <input
+      type="text"
+      placeholder="new todo"
+      class="h-11 rounded-lg border-blue-800 border-2 min-w-75 p-3 w-full"
+    />
+    <button
+      class="bg-blue-600 text-white h-11 w-32 rounded-lg cursor-pointer hover:bg-blue-500 duration-500"
+    >
+      Add
+    </button>
+  </section>
+
+  <section class="p-4 bg-blue-50 rounded-2xl my-6 flex items-center gap-4">
+    <button
+      class="h-11 w-24 border-2 border-blue-400 bg-transparent cursor-pointer hover:bg-blue-500 rounded-lg"
+    >
+      All
+    </button>
+    <button
+      class="h-11 w-24 border-2 border-none bg-red-600 cursor-pointer hover:bg-blue-500 rounded-lg text-white"
+    >
+      Active
+    </button>
+    <button
+      class="h-11 w-24 border-2 border-none bg-green-600 cursor-pointer hover:bg-blue-500 rounded-lg text-white"
+    >
+      Completed
+    </button>
+  </section>
+
+  <section>
+    <div class="flex items-center justify-between">
+      <p class="text-sm text-gray-600">Tasks</p>
+      <div class="flex items-center gap-1">
+        <p class="text-sm text-gray-600">Active <span>1</span></p>
+        <p class="mb-2 font-semibold">.</p>
+        <p class="text-sm text-gray-600">done <span>1</span></p>
+        <p class="mb-2 font-semibold">.</p>
+        <p class="text-sm text-gray-600">Total <span>2</span></p>
+      </div>
+    </div>
+
+    <div>
+      <ul>
+        <li>
+          <div class="flex items-center w-full bg-gray-100 p-2 my-5 rounded-lg">
+            <input type="checkbox" class="mr-2" />
+            <p class="flex-1">Task text</p>
+            <button
+              (click)="deleteTodo(0)"
+              class="p-1 flex items-center justify-center rounded-md w-5.5 h-5.5 border-2 bg-transparent border-red-600"
+            >
+              X
+            </button>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-center w-full bg-gray-100 p-2 my-5 rounded-lg">
+            <input type="checkbox" class="mr-2" />
+            <p class="flex-1 line-through">Completed Task text</p>
+            <button
+              class="p-1 flex items-center justify-center rounded-md w-5.5 h-5.5 border-2 bg-transparent border-red-600"
+            >
+              X
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
 
 <router-outlet />
